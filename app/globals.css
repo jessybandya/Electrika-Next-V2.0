@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    color: #2563EB;
+    font-weight: bold;
+    font-size: 20px;
+}
+.my-swal-container{
+    z-index: 9999;
+}
+.login-container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/media/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .control-btn .next,
+.control-btn .prev {
+  position: absolute;
+  top: 25%;
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  background: #007bff;
+  border-radius: 50%;
+  color: #fff;
+  transform: 0.5s;
+  z-index: 5;
+}
+.control-btn .prev {
+  left: -20px;
+}
+.control-btn .next {
+  right: -20px;
+}
+.control-btn .prev i,
+.control-btn .next i {
+  font-size: 20px;
+  transition: 0.5s;
+  color: #fff;
+}
+.control-btn .prev:hover,
+.control-btn .next:hover {
+  background: #fff;
+  color: #007bff;
+  cursor: pointer;
+  border: 1px solid #007bff;
+}
