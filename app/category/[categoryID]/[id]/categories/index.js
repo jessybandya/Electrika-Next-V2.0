@@ -222,20 +222,10 @@ function Categories({ params, allData, images }) {
       </div>
 
       <center className="flex items-center gap-1 mt-5 ml-5">
-     {params.id > 1 &&(
-      <Link href={`/shop/${currentPage - 1}`}>
-      <Button
-        variant="text"
-        className="flex items-center gap-2"
-      >
-        <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
-      </Button>
-    </Link>
-     )}
 
     <div className="flex items-center gap-1">
     {getVisiblePageNumbers().map((pageNumber) => (
-      <Link href={`/shop/${pageNumber}`} key={pageNumber}>
+      <Link href={`/category/${params.categoryID}/${pageNumber}`} key={pageNumber}>
       {pageNumber === currentPage ?(
         <IconButton
           {...getItemProps(pageNumber)}
@@ -258,17 +248,7 @@ function Categories({ params, allData, images }) {
     ))}
   </div>
 
-  {currentPage < totalPages && (
-    <Link href={`/shop/${currentPage + 1}`}>
-    <Button
-      variant="text"
-      className="flex items-center gap-2"
-      onClick={next}
-    >
-      <ArrowRightIcon strokeWidth={2} className="h-4 w-4" /> 
-    </Button>
-  </Link>
-  )}
+
 
 
     </center>

@@ -1,26 +1,26 @@
 import React from 'react'
 import Product from './product';
 
-export const getStaticPaths = async () => {
-  const data = await getAllData();
+// export const getStaticPaths = async () => {
+//   const data = await getAllData();
 
-  const paths = data.map((product) => ({
-    params: {
-      id: product.id.toString(), // Assuming the product object has an "id" property
-    },
-  }));
+//   const paths = data.map((product) => ({
+//     params: {
+//       id: product.id.toString(), // Assuming the product object has an "id" property
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: true, // false or "blocking"
-  };
-};
+//   return {
+//     paths,
+//     fallback: true, // false or "blocking"
+//   };
+// };
 
-async function getAllData() {
-  const res = await fetch("https://electrikacomputers.co.ke/backend/php/getelectronics.php");
-  const data = await res.json();
-  return data;
-}
+// async function getAllData() {
+//   const res = await fetch("https://electrikacomputers.co.ke/backend/php/getelectronics.php");
+//   const data = await res.json();
+//   return data;
+// }
 
 async function getProductData(electronicId) {
     const response = await fetch(`https://electrikacomputers.co.ke/backend/php/viewelectronic.php?electronicId=${electronicId}`);

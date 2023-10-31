@@ -6,26 +6,26 @@ export const metadata = {
     description: 'Your leading computer store in the heart of the city',
   }
 
-  export const getStaticPaths = async () => {
-    const Data = await getAllData();
-    const paths = Array.from({ length: Data.length }, (_, index) => ({
-      params: {
-        id: (index + 1).toString(),
-      },
-    }));
+  // export const getStaticPaths = async () => {
+  //   const Data = await getAllData();
+  //   const paths = Array.from({ length: Data.length }, (_, index) => ({
+  //     params: {
+  //       id: (index + 1).toString(),
+  //     },
+  //   }));
   
-    return {
-      paths,
-      fallback: true, // false or "blocking"
-    };
-  };
+  //   return {
+  //     paths,
+  //     fallback: true, // false or "blocking"
+  //   };
+  // };
   
 
-  async function getAllData() {
-    const res = await fetch("https://electrikacomputers.co.ke/backend/php/getelectronics.php");
-    const data = await res.json();
-    return data;
-  }
+  // async function getAllData() {
+  //   const res = await fetch("https://electrikacomputers.co.ke/backend/php/getelectronics.php");
+  //   const data = await res.json();
+  //   return data;
+  // }
   
   async function fetchImagesForID(electronicID) {
     const response = await fetch(`https://electrikacomputers.co.ke/backend/php/getimages.php?electronicId=${electronicID}`);
